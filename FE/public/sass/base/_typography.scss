@@ -1,0 +1,30 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    ::after, ::before{
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+    }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    @include responsive(mobile){
+        font-size: 6px;
+    }
+    @include responsive(tablet-port){
+        font-size: 9px;
+    }
+    @include responsive(tablet-land){
+        font-size: 12px;
+    }
+
+    text-decoration: none;
+    list-style-type: none;
+
+}
+a{
+    color: black;
+}

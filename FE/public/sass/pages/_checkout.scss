@@ -1,0 +1,122 @@
+.checkout{
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    @include responsive(tablet-port){
+        flex-direction: column;
+        .checkout-form{
+            input{
+                width: 100%;
+            }
+            &__first{
+                & > * {
+                    width: 50%;
+                }
+            }
+        }
+    }
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    &-form{
+        width: 100%;
+        & > * {
+            display: flex;
+            flex-direction: column;
+        } 
+        &__first{
+            display: flex;
+            flex-direction: row;
+            & > * {
+                width: 44.5%;
+            }
+        }
+    }
+
+    &-totals{
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        table {
+            thead > *{
+                font-size: 1.5rem;
+            }
+            .sum{
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #B88E2F;
+            }
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #D9D9D9;
+
+        }
+        &__f{
+            text-align: left;
+            padding: 0.5rem 0;
+        }
+        &__s{
+            text-align: right;
+            padding: 0.5rem 0;
+        }
+        &__rules {
+            display: flex;
+            flex-direction: column;
+            i{
+                padding-right: 1rem;
+                margin-bottom: 1rem;
+            }
+            input[type='radio']{
+               width: 1.2rem;
+               margin: 0;
+               padding: 0;
+            }
+            label{
+                display: flex;
+                justify-content:flex-start;
+                align-items:center;
+                &> *{
+                    padding: 0.2rem;
+                }
+            }
+            button {
+                border: 1px solid #000;
+                background-color: #fff;
+                width: 18rem;
+                height: 3.2rem;
+                margin-left: 50%;
+                margin-top: 2rem;
+                border-radius: 1rem;
+                transform: translateX(-50%);
+            }
+            &-content{
+                font-weight: 300;
+            }
+        }
+
+    }
+
+    label > * {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+
+    }
+    input { 
+        border:  1px solid #9F9F9F;
+        width: 80%;
+        height: 3rem;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+.checkout-title{
+    width: 90%;
+    margin-left: 5%;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}

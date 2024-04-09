@@ -1,0 +1,151 @@
+.banner{
+    width: 100%;
+    height: 31.25rem;
+    position: relative;
+    background-image: url("../../../public/assets/banner.svg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-bottom: 2rem;
+
+    &__content{
+    align-items: center;
+    padding-top: 6.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    };
+
+    h1{
+        font-size: 3rem;
+    }
+    p{
+        font-size: 1rem;
+        margin-top: 8rem;
+    }
+}
+
+.section {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    &-heading{
+        border-bottom: 1px solid #000;
+        h2{
+            margin-bottom: 1rem;
+        }
+    }
+    &-heading__title {
+        font-size: 3rem;
+    }
+
+    &-body{
+        margin-top: 3rem;
+    }
+
+    &-body {
+        padding-bottom: 3rem;
+        border-bottom: 1px solid #000;
+        
+    }
+}
+
+.news{
+    width: 90%;
+    &__list {
+        @include gridtab;
+        gap: 1rem;
+    }
+}
+
+.shop-list{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto auto;
+    @include responsive(tablet-port){
+        grid-template-columns: auto;
+    }
+    @include responsive(tablet-land){
+        grid-template-columns: auto;
+    }
+    @include responsive(mobile){
+        grid-template-columns: auto;
+    }
+    justify-content: space-between; 
+    align-content: space-around;
+
+    &__item > *{
+        width: 38rem;
+        height: 34rem;
+    }
+}
+   
+
+.blog-list{
+    display: flex;
+    flex-direction: column;
+    align-items:stretch;
+    .blog-item{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        @include responsive(tablet-land){
+            flex-direction: column;
+        }
+        img{
+            width: 45%;
+            height: 18rem;
+        }
+        &__content{
+            width: 50%;
+            align-items: center;
+            margin-top: 3rem;
+            margin-left: 5%;
+            border-bottom: 1px solid #000;
+            p{
+                color: #898989;
+            }
+        }
+        &__btn{
+
+            margin-bottom: 4rem;
+            display: flex;
+            flex-direction: row-reverse;
+            
+            @include responsive(tablet-land){   
+                flex-direction: row;
+                padding-bottom: 4rem;
+            }
+        }
+    }
+}
+.services{
+    width: 100%;
+    height: 18rem;
+    background-color: #FAF3EA;
+    &-menu{
+        @include gridtab;
+        margin: 1rem 2rem;
+        padding-right: 2rem;
+        padding-top: 5rem;
+        gap: 2rem;
+    }
+    &-item{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: start;
+        h1{
+            font-size: 1.5rem;
+        }
+        i {
+            font-size: 3.2rem;
+            margin-right:1rem;
+        }
+        p{
+            font-size: 0.8rem;
+            color: #898989;
+        }
+    }
+}

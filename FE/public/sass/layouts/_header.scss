@@ -1,0 +1,207 @@
+@use 'sass:math';
+.header {
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 6.25rem;
+    box-shadow: 1px #000;
+    &__logo{
+        width: calc(100%/3);
+        display: block;
+        justify-content: center;
+    }
+}
+
+.nav{
+    width: calc(100%/3);
+    @include responsive(tablet-port){
+        display: none;
+    }
+}
+
+.main-menu{
+    display: block;
+    justify-content: center;
+    &__list {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    &__item{
+        margin: 2rem;
+
+    }
+    &__link{
+        font-size: 1.2rem;
+        color: #000;
+    }
+}
+
+.block {
+    display: block;
+    width: 20%;
+    display: flex;
+    margin-left: 10%;
+    & > * {
+        cursor: pointer;
+    }
+    &__item >*{
+        font-size: 1.4rem;
+        margin-left: 2.2rem; 
+    }
+    .mylist{
+        display: none;
+        @include responsive(tablet-port){
+            display: block;
+        }
+        position: relative;
+    }
+
+    &-menu__list{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 5;
+        width: 150%;
+        height: 10rem;
+        border-radius: 0.4rem;
+        background-color: white;
+    }
+    &-menu__item{
+        margin-top: 1rem;
+        width: 4.3rem;
+        a{
+            color: #000;
+        }
+    }
+    &-menu__link{
+        padding: 0.6rem;
+    }
+}
+
+.modal {
+    display: block; 
+    position: fixed;
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+    
+    h1{
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    h1, label {
+        color: #B88E2F;
+    }
+    &-form{
+        display: flex;
+        flex-direction: column;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        padding-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        width: 40rem;
+        height: auto;
+        background-color: #fff;
+        &-switch{
+            cursor: pointer;
+            border: none;
+            background-color: white;
+            margin-top: 0.3rem;
+            &:hover{
+                color: #0171D3;
+            }
+        }
+
+        &-login{
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &__inp{
+                margin: 1.2rem 0;
+                width: 30rem;
+                display: flex;
+                flex-direction: column;
+                input {
+                    border-radius: 0.5rem;
+                    margin-top: 0.5rem;
+                    height: 2.5rem;
+                }
+            }
+
+            &__submit{
+                border: none;
+                width: 8rem;
+                height: 2.8rem;
+                border-radius: 1rem;
+                font-weight: 700;
+                background-color: #F9F1E7;
+            }
+
+            &-btn{
+                border: none;
+                width: 26rem;
+                margin-top: 0.5rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                &__fb{
+                    border-radius: 1rem;
+                    width: 8rem;
+                    height: 2.8rem;
+                    border: none;
+                    color: #fff;
+                    border: 2px solid #0171D3;
+                    background-color: #0171D3;
+                }
+                &__gg{
+                    border-radius: 1rem;
+                    width: 8rem;
+                    height: 2.8rem;
+
+                }
+                &__logout{
+                    border-radius: 1rem;
+                    width: 8rem;
+                    height: 2.8rem;
+                    border: none;
+                    color: #fff;
+                    border: 2px solid #0171D3;
+                    background-color: #0171D3;
+                    margin-top: 5rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    &-close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #fff;
+        background-color: #000;
+        border: none;
+        margin: 2rem;
+        width: 1.5rem;
+        border-radius: 0.1rem;
+    }
+  }

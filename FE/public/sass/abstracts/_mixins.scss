@@ -1,0 +1,56 @@
+// 1rem = 16px
+@mixin responsive($break){
+    @if $break == 'phone' {
+        @media only screen and (max-width: 37.5rem) {
+            @content;
+        }
+    } // < 600px
+
+    @if $break == 'tablet-port' {
+        @media only screen and (max-width: 56.25rem) {
+            @content;
+        }
+    } // < 900px
+
+    @if $break == 'tablet-land' {
+        @media only screen and (max-width: 75rem) {
+            @content;
+        }
+    } // < 1200px
+
+    @if $break == 'desktop' {
+        @media only screen and (min-width: 112.5rem) {
+            @content;
+        }
+    } // > 1800px
+}
+
+@mixin abscenten {
+    margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-50% -50%);
+}
+
+@mixin gridtab{
+    display: grid;
+    gap: 1;
+    grid-template-columns: auto auto auto auto;
+    @include responsive(desktop){
+        gap: 1rem;
+        grid-template-columns: auto auto auto auto; 
+    }
+    @include responsive(tablet-land){
+        gap: 1rem;
+        grid-template-columns: auto auto auto;
+    }
+    @include responsive(tablet-port){
+        gap: 1rem;
+        grid-template-columns: auto auto;
+    }
+    @include responsive(mobile){
+        gap: 1rem;
+        grid-template-columns: auto auto;
+    }
+    justify-content: space-between; 
+    align-content: space-around;
+}
